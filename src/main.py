@@ -1,4 +1,4 @@
-# # STEP 1: Training data
+# # Training data
 # emails = [
 #     ("Win money now", "spam"),
 #     ("Click here to verify your account", "phishing"),
@@ -8,7 +8,7 @@
 #     ("Congratulations you won a prize", "spam")
 # ]
 
-# # STEP 2: Separate text and labels
+# #  Separate text and labels
 # texts = []
 # labels = []
 
@@ -16,25 +16,25 @@
 #     texts.append(email)
 #     labels.append(label)
 
-# # STEP 3: Convert text to numbers
+# #  Convert text to numbers
 # from sklearn.feature_extraction.text import TfidfVectorizer
 
 # vectorizer = TfidfVectorizer()
 # X = vectorizer.fit_transform(texts)
 
-# # STEP 4: Train model
+# # Train model
 # from sklearn.naive_bayes import MultinomialNB
 
 # model = MultinomialNB()
 # model.fit(X, labels)
 
-# # STEP 5: Detect function
+# #  Detect function
 # def detect_email(email_text):
 #     email_vector = vectorizer.transform([email_text])
 #     prediction = model.predict(email_vector)
 #     return prediction[0]
 
-# # STEP 6: Test
+# #  Test
 # test_email = "win now "
 # result = detect_email(test_email)
 
