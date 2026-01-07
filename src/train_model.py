@@ -7,7 +7,7 @@ import joblib
 from preprocess import preprocess_text
 
 # Charger dataset
-df = pd.read_csv("./data/dataset.csv")  # dataset réel
+df = pd.read_csv("../data/dataset.csv")  # dataset réel
 df['text_clean'] = df['text'].apply(preprocess_text)
 
 # Split
@@ -30,6 +30,8 @@ print("Classification Report:\n", classification_report(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 
 # Sauvegarder modèle et vectorizer
-joblib.dump(model, "../email_model.pkl")
-joblib.dump(vectorizer, "../vectorizer.pkl")
+
+joblib.dump(model, "email_model.pkl")
+joblib.dump(vectorizer, "vectorizer.pkl")
+
 print("Model and vectorizer saved successfully.")
